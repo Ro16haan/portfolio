@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Balagouni Rohan Kumar Goud, a Computer Science Engineering student focused on AI, web development, and practical software systems." />
+  <title>Balagouni Rohan Kumar Goud | Portfolio</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23101112'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Arial' font-size='12' font-weight='700' fill='white'%3EBR%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="portfolio-hidden">
+  <!-- Animated Northern Lights Backdrop -->
+  <div class="aurora-container" aria-hidden="true">
+    <div class="aurora-wave aurora-wave-1"></div>
+    <div class="aurora-wave aurora-wave-2"></div>
+    <div class="aurora-wave aurora-wave-3"></div>
+    <div class="aurora-wave aurora-wave-4"></div>
+  </div>
+
+  <canvas id="field" aria-hidden="true"></canvas>
+
+  <!-- Landing Screen -->
+  <div id="landing-screen" style="display: none;">
+    <button id="enter-btn" class="enter-btn" aria-label="Open Portfolio">
+      <span class="btn-text">Portfolio</span>
+      <span class="btn-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+
+  <!-- Entrance Transition Overlay -->
+  <div id="transition-overlay" style="display: none;" aria-hidden="true">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path class="transition-path path-purple" d="M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z" fill="#2B3035"></path>
+      <path class="transition-path path-indigo" d="M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z" fill="#1D2125"></path>
+      <path class="transition-path path-blue" d="M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z" fill="#171A1D"></path>
+      <path class="transition-path path-emerald" d="M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z" fill="#131518"></path>
+      <path class="transition-path path-navy" d="M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z" fill="#0F1113"></path>
+    </svg>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Rohan home">
+      <span>BR</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-action" href="assets/rohan-kumar-goud-resume.pdf" download>Resume</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-kicker">
+        <span></span>
+        Computer Science Engineering Student
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Hyderabad, Telangana</p>
+          <h1 id="hero-title" class="rolling-title">Balagouni Rohan Kumar Goud</h1>
+          <p class="hero-lede">
+            I build practical AI and web systems that solve everyday problems, from assistive
+            vision tools to automated attendance workflows.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="mailto:rohankumargoud16@gmail.com">Hire / Collaborate</a>
+          </div>
+        </div>
+        <div class="hero-aside">
+          <div class="hero-profile reveal">
+            <div class="profile-glow"></div>
+            <div class="profile-frame">
+              <img src="assets/profile.png" alt="Balagouni Rohan Kumar Goud" class="profile-image" />
+              <div class="profile-overlay"></div>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="Profile highlights">
+            <div class="signal">
+              <span class="signal-label">Focus</span>
+              <strong>AI + Web Development</strong>
+            </div>
+            <div class="signal">
+              <span class="signal-label">Current</span>
+              <strong>BTech CSE - 2028</strong>
+            </div>
+            <div class="signal">
+              <span class="signal-label">CGPA</span>
+              <strong>8.2</strong>
+            </div>
+            <div class="signal">
+              <span class="signal-label">Open To</span>
+              <strong>Internships + Projects</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro" aria-labelledby="intro-title">
+      <div class="section-label">About</div>
+      <div class="intro-copy">
+        <h2 id="intro-title">Code. Create. Learn. Repeat.</h2>
+        <p>
+         I am a Computer Science Engineering student who leverages technology to solve real-world problems and build practical digital products.
+         My interests include AI, accessibility, and web development.
+         I enjoy creating user experiences that are simple, useful, and impactful.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Selected Work</p>
+          <h2 id="projects-title">Projects with real-world intent.</h2>
+        </div>
+        <a class="text-link" href="https://github.com/rohan16goud" target="_blank" rel="noreferrer">
+          GitHub Profile
+        </a>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card featured reveal">
+          <div class="project-index">01</div>
+          <div>
+            <h3>Third Eye - AI Assistant for Visually Impaired</h3>
+            <p>
+              An AI-powered assistant that captures surroundings through a camera and provides
+              audio descriptions, text reading, and object detection for visually impaired users.
+            </p>
+            <div class="tags">
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>TensorFlow</span>
+              <span>gTTS</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-index">02</div>
+          <div>
+            <h3>Smart Attendance System</h3>
+            <p>
+              A face-recognition attendance system that automates student attendance, stores
+              records in MySQL, and supports report generation.
+            </p>
+            <div class="tags">
+              <span>Python</span>
+              <span>Face Recognition</span>
+              <span>MySQL</span>
+              <span>OpenCV</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-index">03</div>
+          <div>
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              A responsive portfolio website designed to showcase projects, skills, achievements,
+              and certifications with a clean web presence.
+            </p>
+            <div class="tags">
+              <span>WordPress</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section split" aria-labelledby="skills-title">
+      <div>
+        <p class="section-label">Capabilities</p>
+        <h2 id="skills-title">Technical base, human edge.</h2>
+      </div>
+      <div class="skill-columns">
+        <div class="skill-block reveal">
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>C, Python, HTML, CSS</li>
+            <li>Data Structures, OOP, DBMS</li>
+            <li>SQL basics and data visualization</li>
+            <li>GitHub, VS Code, Canva, WordPress</li>
+          </ul>
+        </div>
+        <div class="skill-block reveal">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Problem solving and critical thinking</li>
+            <li>Communication and team collaboration</li>
+            <li>Time management and adaptability</li>
+            <li>Leadership through student initiatives</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section timeline-section" aria-labelledby="experience-title">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Leadership</p>
+          <h2 id="experience-title">Beyond coursework.</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <span>2026</span>
+          <div>
+            <h3>Secretary - Computer Society of India</h3>
+            <p>Sreyas Student Branch Chapter leadership role focused on student engagement.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span>2026</span>
+          <div>
+            <h3>Coordinator - HackAttack</h3>
+            <p>Managed hackathon operations and participant engagement for a technical event.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span>Mentor</span>
+          <div>
+            <h3>First-Year Student Mentor</h3>
+            <p>Guided new students at Sreyas Institute of Engineering and Technology.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span>CIE</span>
+          <div>
+            <h3>Innovation and Entrepreneurship Member</h3>
+            <p>Member of the Centre for Innovation and Entrepreneurship at Sreyas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section credentials" aria-labelledby="education-title">
+      <div>
+        <p class="section-label">Education</p>
+        <h2 id="education-title">Academic path.</h2>
+      </div>
+      <div class="credential-grid">
+        <article class="credential-card reveal">
+          <span>2028</span>
+          <h3>BTech - CSEO</h3>
+          <p>Sreyas Institute of Engineering and Technology</p>
+          <strong>CGPA 8.2 - Pursuing</strong>
+        </article>
+        <article class="credential-card reveal">
+          <span>2024</span>
+          <h3>Intermediate - MPC</h3>
+          <p>Keshav Smarak Junior College</p>
+          <strong>8.2</strong>
+        </article>
+        <article class="credential-card reveal">
+          <span>2022</span>
+          <h3>SSC - 10th</h3>
+          <p>Gowtham Model School</p>
+          <strong>9.3</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section certifications" aria-labelledby="certifications-title">
+      <p class="section-label">Certifications</p>
+      <h2 id="certifications-title">Proof of continuous learning.</h2>
+      <div class="cert-list">
+        <span>Accenture UK - Coding: Development and Advanced Engineering</span>
+        <span>J.P. Morgan - Software Engineering Simulation</span>
+        <span>Digital Skills: Artificial Intelligence - FutureLearn</span>
+        <span>Ignite Bootcamp - Idea to Plan, Wadhwani Foundation</span>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2 id="contact-title">Let us build something useful.</h2>
+      </div>
+      <div class="contact-actions">
+        <a href="mailto:rohankumargoud16@gmail.com">rohankumargoud16@gmail.com</a>
+        <a href="tel:+917981873090">+91 79818 73090</a>
+        <a href="https://linkedin.com/in/rohan-goud-196b98276" target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+        <a href="https://github.com/rohan16goud" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Balagouni Rohan Kumar Goud</span>
+    <button class="copy-email" type="button" data-email="rohankumargoud16@gmail.com">
+      Copy Email
+    </button>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
